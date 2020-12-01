@@ -1,0 +1,121 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for /Users/barakat/development/flutter/bin/cache/artifacts/usbmuxd/iproxy.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:125:5)
+#1      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:41:30)
+#2      ErrorHandlingProcessManager.start.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:462:33)
+#3      _run (package:flutter_tools/src/base/error_handling_io.dart:356:20)
+#4      ErrorHandlingProcessManager.start (package:flutter_tools/src/base/error_handling_io.dart:462:12)
+#5      _DefaultProcessUtils.start (package:flutter_tools/src/base/process.dart:477:28)
+#6      IProxy.forward (package:flutter_tools/src/ios/iproxy.dart:51:26)
+#7      IOSDevicePortForwarder.forward (package:flutter_tools/src/ios/devices.dart:827:31)
+<asynchronous suspension>
+#8      buildObservatoryUri (package:flutter_tools/src/mdns_discovery.dart:243:20)
+#9      MDnsObservatoryDiscovery.getObservatoryUri (package:flutter_tools/src/mdns_discovery.dart:158:18)
+<asynchronous suspension>
+#10     FallbackDiscovery.discover (package:flutter_tools/src/ios/fallback_discovery.dart:85:58)
+<asynchronous suspension>
+#11     IOSDevice.startApp (package:flutter_tools/src/ios/devices.dart:436:52)
+<asynchronous suspension>
+#12     FlutterDevice.runHot (package:flutter_tools/src/resident_runner.dart:551:54)
+<asynchronous suspension>
+#13     HotRunner.run (package:flutter_tools/src/run_hot.dart:339:31)
+#14     _rootRunUnary (dart:async/zone.dart:1198:47)
+#15     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#16     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#17     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#18     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#19     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#20     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+#21     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+#22     ResidentRunner.runSourceGenerators (package:flutter_tools/src/resident_runner.dart)
+#23     _rootRunUnary (dart:async/zone.dart:1198:47)
+#24     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#25     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#26     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#27     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#28     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#29     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+#30     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+#31     FlutterBuildSystem.buildIncremental (package:flutter_tools/src/build_system/build_system.dart)
+#32     _rootRunUnary (dart:async/zone.dart:1198:47)
+#33     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#34     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#35     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#36     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#37     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#38     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+#39     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+#40     _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart)
+#41     _rootRunUnary (dart:async/zone.dart:1198:47)
+#42     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#43     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#44     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#45     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#46     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#47     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:567:7)
+#48     _rootRun (dart:async/zone.dart:1190:13)
+#49     _CustomZone.run (dart:async/zone.dart:1093:19)
+#50     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#51     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#52     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#53     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#54     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#55     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 1.22.4, on Mac OS X 10.15.7 19H2 darwin-x64, locale
+    en-CA)
+    • Flutter version 1.22.4 at /Users/barakat/development/flutter
+    • Framework revision 1aafb3a8b9 (2 weeks ago), 2020-11-13 09:59:28 -0800
+    • Engine revision 2c956a31c0
+    • Dart version 2.10.4
+
+[✗] Android toolchain - develop for Android devices
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from:
+      https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK
+      components.
+      (or visit https://flutter.dev/docs/get-started/install/macos#android-setup
+      for detailed instructions).
+      If the Android SDK has been installed to a custom location, set
+      ANDROID_SDK_ROOT to that location.
+      You may also want to add it to your PATH environment variable.
+
+
+[✓] Xcode - develop for iOS and macOS (Xcode 12.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 12.2, Build version 12B45b
+    • CocoaPods version 1.10.0
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from
+      https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/macos#android-setup
+      for detailed instructions).
+
+[✓] VS Code (version 1.38.0)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.7.1
+
+[✓] Connected device (2 available)
+    • Barakat (mobile)           • 6f8b5dd230913bc3a8bad1b41e2fdeb49255dc5b •
+      ios • iOS 14.2
+    • iPhone 12 Pro Max (mobile) • 8121D358-F3A4-4D76-876E-705E8285DBD7     •
+      ios • com.apple.CoreSimulator.SimRuntime.iOS-14-2 (simulator)
+
+! Doctor found issues in 2 categories.
+```
