@@ -14,5 +14,5 @@ Storing the purchase for user.
 2. Add a + button in the bottom corner.
 3. Adjust the layout and UI.
 
-#TODO
+# TODO: 
 Add date selection page.
