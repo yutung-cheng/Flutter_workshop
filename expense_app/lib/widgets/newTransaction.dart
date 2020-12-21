@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
 
-class NewTransaction extends StatelessWidget {
+class NewTransaction extends StatefulWidget {
   final Function addTx;
+
+  NewTransaction(this.addTx);
+
+  @override
+  _NewTransactionState createState() => _NewTransactionState();
+}
+
+class _NewTransactionState extends State<NewTransaction> {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
 
-  NewTransaction(this.addTx);
+  void submitData() {
+    final enteredText = titleController.text;
+    final enteredAmount = double.parse(amountController.text);
+
+    if (enteredText.isEmpty || enteredAmount <= 0) {
+      return;
+    }
+
+    widget.addTx(
+      enteredText,
+      enteredAmount, //parse() changes to double
+    );
+
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +40,9 @@ class NewTransaction extends StatelessWidget {
           children: [
             TextField(
               decoration: InputDecoration(labelText: 'Item'),
-              controller:
-                  titleController, // Listen to the input and safe into it
+              // Listen to the input and safe into it
+              controller: titleController,
+              onSubmitted: (_) => submitData(),
               // onChanged: (value) {
               //   titleInupt = value;
               // },
@@ -28,20 +51,37 @@ class NewTransaction extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: 'Amount'),
               controller: amountController,
-              // onChanged: (value) {
-              //   amountInput = value;
-              // },
+              //only enter numbers
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              // _ means it is a value but we dont care what it is
+              onSubmitted: (_) => submitData(),
+              // onChanged: (value)  => amountInput = value;
             ),
-            FlatButton(
+
+            Container(
+              height: 70,
+              child: Row(
+                children: [
+                  Text(
+                    'No Date Chosen!',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  FlatButton(
+                    textColor: Theme.of(context).primaryColor,
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            RaisedButton(
               child: Text('Add'),
-              textColor: Colors.blue,
-              onPressed: () {
-                addTx(
-                  titleController.text,
-                  double.parse(
-                      amountController.text), //parse() changes to double
-                );
-              },
+              color: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).textTheme.button.color,
+              onPressed: submitData,
             )
           ],
         ),
