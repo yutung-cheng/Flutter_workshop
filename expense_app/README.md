@@ -1,16 +1,15 @@
 # expense_app
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Flutter
 
-A few resources to get you started if this is your first Flutter project:
+User can update the price and items to the app.
+The app will record the date and time immediately.
+Storing the purchase for user.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Future update:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Add the chart at the top to calculate the spend during a week.
+2. Add a + button in the bottom corner.
+3. Adjust the layout and UI.
